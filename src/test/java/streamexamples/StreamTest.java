@@ -4,18 +4,9 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import java.time.LocalDate;
-import java.util.Comparator;
 import java.util.List;
-import java.util.Optional;
-import java.util.function.BiPredicate;
-import java.util.function.Predicate;
-import java.util.stream.Collectors;
 
-import static java.time.LocalDate.of;
-import static java.util.Arrays.asList;
-import static org.junit.jupiter.api.Assertions.*;
-import static streamexamples.Category.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class StreamTest {
   List<Product> products;
