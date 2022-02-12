@@ -1,4 +1,4 @@
-Lab:
+## Lab:
 
 You need to build a website status checker. The program takes a list of some popular websites and makes an HTTP GET request to each of the sites. If the site responds to HTTP traffic it will be considered as the "site is up" otherwise the "site is down". You need to build the program using Java threads.
 
