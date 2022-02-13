@@ -12,18 +12,21 @@ public class ThreadTimeSlicingExample {
 
   public static void main(String[] args) {
 
-    Runnable runnable = () -> {
-      System.out.println("Starting thread: " + Thread.currentThread().getName());
-      try {
-        Thread.sleep(1000);
-      } catch (InterruptedException e) {
-        e.printStackTrace();
+    Runnable r = new Runnable() {
+      @Override
+      public void run() {
+        System.out.println("Starting thread: " + Thread.currentThread().getName());
+        try {
+          Thread.sleep(1000);
+        } catch (InterruptedException e) {
+          e.printStackTrace();
+        }
+        System.out.println("Ending thread: " + Thread.currentThread().getName());
       }
-      System.out.println("Ending thread: " + Thread.currentThread().getName());
     };
 
-    Thread t1 = new Thread(runnable, "t1");
-    Thread t2 = new Thread(runnable, "t2");
+    Thread t1 = new Thread(r, "t1");
+    Thread t2 = new Thread(r, "t2");
     t1.start();
     t2.start();
   }
