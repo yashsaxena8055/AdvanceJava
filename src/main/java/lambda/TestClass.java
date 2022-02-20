@@ -1,2 +1,4 @@
-package lambda;public class TestClass {
+package lambda;
+
+public class TestClass {
 }
