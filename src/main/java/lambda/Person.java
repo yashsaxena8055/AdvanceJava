@@ -1,10 +1,17 @@
 package lambda;
 
+import java.util.function.Predicate;
+
 public class Person {
 
   private String firstName;
   private String lastName;
   private int age;
+
+  Predicate<Person> isFirstNameValid=p->p.getFirstName().equals("");
+  Predicate<Person> isLastNameValid=p->p.getLastName().equals("");
+  Predicate<Person> isAgeAbove18=p->p.getAge()>=18;
+
 
   public Person() {
   }
@@ -43,4 +50,10 @@ public class Person {
   public String toString() {
     return "Person{" + "firstName=" + firstName + ", lastName=" + lastName + ", age=" + age + '}';
   }
+
+  public boolean isValid() {
+  return isFirstNameValid.and(isLastNameValid.and(isAgeAbove18)).test(this);
+
+  }
+
 }
